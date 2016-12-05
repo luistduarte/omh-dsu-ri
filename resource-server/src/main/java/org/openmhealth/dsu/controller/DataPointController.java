@@ -208,7 +208,6 @@ public class DataPointController {
  	   if(jsonFile.delete())
  		 jsonFile.createNewFile();
  	   
- 	   System.out.println("toFile->"+ jsonFile.getAbsolutePath() + "\n" + "Content->" + objectMapper.writeValueAsString(dataPoint.getBody()) + "\n" + dataPoint.getBody().toString());
  	   FileWriter fw = new FileWriter(jsonFile.getAbsoluteFile());
  	   BufferedWriter bw = new BufferedWriter(fw);
  	   bw.write(objectMapper.writeValueAsString(dataPoint.getBody()));
@@ -225,10 +224,10 @@ public class DataPointController {
         
      
  	   if (report.isSuccess()) {
-        	System.out.println("PASSED!!!!!!!!!!!!!!!!");
+        	System.out.println("PASSED!!!");
        }
        else {	
-    	   System.out.println("NOT PASSED!!!!!!!!!!!!!!!!");
+    	   System.out.println("NOT PASSED!!!");
     	   return new ResponseEntity<>(NOT_ACCEPTABLE);
        }
        // FIXME test validation
